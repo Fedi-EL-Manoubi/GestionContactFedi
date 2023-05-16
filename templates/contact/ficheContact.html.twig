@@ -1,6 +1,6 @@
     {% extends 'base.html.twig' %}
 
-    {% block title %}Liste des Contacts !{% endblock %}
+    {% block title %}Fiche Contacts !{% endblock %}
 
               
     {% block body %}
@@ -11,7 +11,7 @@
                 <h4 class="card-header"> {{ leContact.nom}} {{leContact.prenom }} </h4>
                 <div class="row">
                     <div class="col-2 d-flex align-items-center">
-                        <img class="avatar mx-auto my-3" style="height: auto; max-width: 200%; display: block;" src=" {{ leContact.avatar}} " alt="Card image">
+                        <img class="avatar mx-auto my-3" style="height: auto; max-width: 200%; display: block;" src=" {{asset(leContact.avatar)}} " alt="Card image">
                     </div>
                     <div class="col">
                             <ul class="list-group list-group-flush">
@@ -22,10 +22,11 @@
                             <li class="list-group-item"> 
                                 {% if leContact.sexe==0 %}
                                     <span class="badge badge info">homme</span>
-                                    {% else %}
+                                                     {% else %}
                                     <span class="badge badge info">femme</span>
                                 {% endif %}             
                             </li>
+                            <li class="list-group-item"> <a href=" {{path('ficheCategorie' , {'id': leContact.categorie.id})}} ">{{ leContact.categorie.libelle}} </li></a>
                         </ul>
                     </div>
                 </div>

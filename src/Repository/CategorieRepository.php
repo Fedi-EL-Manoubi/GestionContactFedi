@@ -21,7 +21,7 @@ class CategorieRepository extends ServiceEntityRepository
         parent::__construct($registry, Categorie::class);
     }
 
-    public function save(Categorie $entity, bool $flush = false): void
+    public function add(Categorie $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
