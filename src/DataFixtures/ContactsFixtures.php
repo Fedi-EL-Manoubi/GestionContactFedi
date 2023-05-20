@@ -13,7 +13,7 @@ class ContactsFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create("fr_FR");
-        $categories=[];
+        $categories=[];     
                      $categorie=new  Categorie();
         $categorie->setLibelle("Professionnel")
                   ->setDescription($faker->sentence(50))
