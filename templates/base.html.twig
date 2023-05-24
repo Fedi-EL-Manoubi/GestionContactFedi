@@ -19,16 +19,26 @@
     {# barre de navigation  #}
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Mes Contacts</a>
+            <a class="navbar-brand" href="{{path("contacts")}}">Mes Contacts</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                    <a class="nav-link " href=" {{path("contacts")}} ">Liste des Contacts
-                </a>
-            </li>
+
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-primary">Gestion des Contacts</button>
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="{{path("contacts")}}">Liste des Contacts</a>
+            <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href=" {{path('listeContactsSexe', {'sexe':0})}} "> Liste des Hommes </a>
+      <a class="dropdown-item" href=" {{path('listeContactsSexe', {'sexe':1})}} "> Liste des Femmes</a>
+    </div>
+  </div>
+</div>
+        
                   <li class="nav-item">
                  <a class="nav-link " href=" {{path("categories")}} ">Liste des Categories
               </a>

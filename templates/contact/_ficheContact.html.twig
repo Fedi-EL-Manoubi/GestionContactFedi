@@ -1,0 +1,28 @@
+                      <div class="card mb-3 {% if leContact.sexe == 0 %} border-info  {% else %} border-warning {% endif %}">
+                            <h4 class="card-header"> 
+                            {{ leContact.nom}} 
+                            {{leContact.prenom }} </h4>
+                                    <img class="avatar mx-auto my-3" style="height: auto; max-width: 200%; display: block;" src=" {{ leContact.avatar}} " alt="Card image">
+                                    <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">{{ leContact.rue}} </li>
+                                    <li class="list-group-item">{{ leContact.cp}} </li>     
+                                    <li class="list-group-item">{{ leContact.ville}} </li>
+                                    <li class="list-group-item">{{ leContact.mail}} </li>
+                                    <li class="list-group-item"> 
+                                        {% if leContact.sexe==0 %}
+                                            <span class="badge badge-info bg-primary">homme</span>
+                                            {% else %}
+                                            <span class="badge badge-info bg-danger">femme</span>
+                                        {% endif %}             
+                                    </li>
+                                    {% if mode == 'listeContacts' %}
+                                        <li class="list-group-item">
+                                        <a href=" {{path('ficheCategorie' , {'id': leContact.categorie.id})}} ">{{ leContact.categorie.libelle}}
+                                        </li>
+                                    {% endif %}
+
+                                </ul>
+                            <div class="card-body">
+                                <a href=" {{path('ficheContact', {'id': leContact.id })}} " class="btn btn-success btn-block text-center ">Détail...</a>
+                            </div>
+                            </div>
