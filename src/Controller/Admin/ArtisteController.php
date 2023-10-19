@@ -74,7 +74,8 @@ class ArtisteController extends AbstractController
                 
                 }
 
-                return $this->redirectToRoute('admin_artistes');
+                    return $this->redirectToRoute('admin_artistes');
 
      }
 }
+// ajout commentaire//
