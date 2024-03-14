@@ -55,6 +55,7 @@ class ArtisteController extends AbstractController
             return $this->render('admin/artiste/formAjoutmodifArtiste.html.twig', [
             'formArtiste' => $form->createView()
             
+            
         ]);
 
     }

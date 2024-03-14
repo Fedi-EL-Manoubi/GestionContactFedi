@@ -63,6 +63,11 @@ class Artiste
      */
     private $albums;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Nationalite::class, inversedBy="artistes")
+     */
+    private $nationalite;
+
     public function __construct()
     {
         $this->albums = new ArrayCollection();
@@ -164,6 +169,18 @@ class Artiste
                 $album->setArtiste(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNationalite(): ?Nationalite
+    {
+        return $this->nationalite;
+    }
+
+    public function setNationalite(?Nationalite $nationalite): self
+    {
+        $this->nationalite = $nationalite;
 
         return $this;
     }
